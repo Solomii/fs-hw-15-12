@@ -1,0 +1,58 @@
+:root {
+    font-size: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+}
+
+main {
+    margin: 5vmin;
+}
+
+.user-card__images {
+    width: 100%;
+}
+
+.user-card {
+    position: relative;
+}
+
+.user-card::after,
+.user-card::before {
+    content: url(./../icons/arrow-left-bold-circle.svg);
+    display: block;
+    min-width: 15px;
+    width: 5%;
+    position: absolute;
+    top: 47.5%;
+}
+
+.user-card::after {
+    right: 0;
+    transition:transform 3s;
+    transform:  translateX(50px);
+}
+
+.user-card::before {
+  transition:transform 3s;
+  transform: translateX(-50px);
+}
+
+.user-card:hover::before {
+  transform: translateX(12px) rotate(360deg);
+}
+
+.user-card:hover::after {
+  transform: translateX(-12px) rotate(-180deg);
+}
+
+/* .user-card:hover::after,
+.user-card:hover:before {
+    opacity: 0.5;
+} */
