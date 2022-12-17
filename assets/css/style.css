@@ -35,14 +35,14 @@ main {
 .user-card::after {
     content: url(./../icons/arrow-right-bold-circle.svg);
     right: 0;
-    transition: transform 3s;
     transform: translateX(50px);
+    transition: transform 3s;
 }
 
 .user-card::before {
     content: url(./../icons/arrow-left-bold-circle.svg);
-    transition: transform 3s;
     transform: translateX(-50px);
+    transition: transform 3s;
 }
 
 .user-card:hover::before {
@@ -51,6 +51,37 @@ main {
 
 .user-card:hover::after {
     transform: translateX(-12px);
+}
+
+.title {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.title::after,
+.title::before {
+    content: "";
+    width: 0px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    background: black;
+    transition: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+.title::before {
+    right: 0;
+}
+
+.title::after {
+    left: 0;
+}
+
+.title:hover::after,
+.title:hover::before {
+    width: 100%;
+    box-shadow: 0 3px 0 #7f7f7f;
 }
 
 /* .user-card:hover::after,
